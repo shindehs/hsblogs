@@ -6,5 +6,7 @@ from django.utils import timezone
 
 def post_list(request):
     #return render(request, 'blogs/post_list.html', {})
-    posts = Post.objects.filter(published_date= timezone.now()).order_by('published_date')
+    posts = Post.objects.all().order_by('published_date')
+    from pprint import pprint
+    pprint(posts)
     return render(request, 'blogs/post_list.html',{'posts': posts})
