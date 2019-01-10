@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 def post_list(request):
     #return render(request, 'blogs/post_list.html', {})
     posts = Post.objects.all().order_by('published_date')
-    # from pprint import pprint
+    #from pprint import pprint
     # pprint(posts)
     return render(request, 'blogs/post_list.html',{'posts': posts})
 
